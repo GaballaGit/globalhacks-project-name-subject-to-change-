@@ -20,6 +20,8 @@
 <script lang="ts">
   import { MapLibre, MapEvents } from "svelte-maplibre";
   import 'maplibre-gl/dist/maplibre-gl.css';
+  import { UpdateLoc } from '#lib/export.ts';
+
   async function handleMoveEnd(event: { target: import("maplibre-gl").Map }) {                                                                                       
      const map = event.target;                                                                                                                                        
      const center = map.getCenter();                                                                                                                                  
@@ -31,13 +33,10 @@
        bounds: bounds.toArray(),                                                                                                                                      
      };                                                                                                                                                               
 
-      console.log(location);
+    //  console.log(location);
+
+    UpdateLoc(location);
                                                                                                                                                                       
-     await fetch("/api/outage", {                                                                                                                                     
-       method: "POST",                                                                                                                                                
-       headers: { "Content-Type": "application/json" },                                                                                                               
-       body: JSON.stringify(location),                                                                                                                                
-     });                                                                                                                                                              
    }
 </script>
 

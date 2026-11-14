@@ -1,4 +1,6 @@
 <script>
+    import { UpdateWeather } from "#lib/export.ts";
+
     let advanced = $state(false);
     let date = $state('');
     let temp = $state(0);
@@ -13,7 +15,8 @@
   }
 
   function update_weather() {
-    console.log(get_weather());
+    UpdateWeather(get_weather());
+    //console.log(get_weather());
   }
 
     $effect(() => {

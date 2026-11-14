@@ -1,14 +1,29 @@
-// This file is to export weather/map data to the backend.
+// This file is to export weather/loc data to the backend.
 
-export async function export_data(weather: object, map: object) {
+let weather_data: object;
+let loc_data: object;
+
+export async function UpdateWeather(weather: object) {
+  weather_data = weather;
+  await exportData(weather_data, loc_data);
+}
+
+export async function UpdateLoc(loc: object) {
+  loc_data = loc;
+  await exportData(weather_data, loc_data);
+}
+
+async function exportData(weather: object, loc: object) {
   const data = {
     weather: weather,
-    map_info: map,
+    loc: loc,
   };
+
+  console.log(data);
 
   await fetch("/api/export", {
     method: "POST",
-    headers: { "application/type": "json" },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
 }
