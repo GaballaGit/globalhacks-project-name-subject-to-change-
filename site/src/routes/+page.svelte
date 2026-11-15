@@ -17,6 +17,7 @@
   }
 
   #weather_map_container {
+    margin-top: 5rem;
     display: flex;
     align-items: center;
     justify-content: center;
