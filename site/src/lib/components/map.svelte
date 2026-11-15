@@ -52,8 +52,14 @@
 </div>
 
 <style>
+#map_container {
+  width: min(45vw, 500px);
+  aspect-ratio: 1;
+}
+
 :global(.map) {
-  height: 400px;
+  width: 100%;
+  height: 100%;
 }
 </style>
 

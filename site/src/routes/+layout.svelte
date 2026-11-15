@@ -9,4 +9,10 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<style>
+	:global(body) {
+		margin: 0;
+	}
+</style>
+
 {@render children()}

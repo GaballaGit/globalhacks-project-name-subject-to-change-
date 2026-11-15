@@ -5,12 +5,21 @@
 </script>
 
 <Navbar />
-<Forum />
-<Map />
+<div id="weather_map_container">
+  <Forum />
+  <Map />
+</div>
 
 <style>
   * {
     margin: 0px;
     padding: 0px;
+  }
+
+  #weather_map_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
   }
 </style>
